@@ -27,9 +27,9 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "/html/body/div[1]/ul/li[3]")
     private WebElement loginBtn;
 
-    public MainPage goToShopClick() {
+    public ShopPage goToShopClick() {
         click(shopBtn);
-        return this;
+        return new ShopPage(driver);
     }
 
     public MainPage goToMainPageClick() {

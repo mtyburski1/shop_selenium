@@ -13,6 +13,7 @@ public class TestBase {
 
     @BeforeMethod
     public void setUp() {
+
         Configurations configurations = new Configurations();
 
         softAssert = new SoftAssert();
