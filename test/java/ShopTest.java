@@ -1,5 +1,4 @@
-package base;
-
+import base.Pages;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -8,7 +7,7 @@ public class ShopTest extends Pages {
     @Test
     public void shouldBuy() {
         mainPage.goToShopClick()
-                .ClickOnProduct(8); // lista 0-11
+                .ClickOnProduct(8);
         scHelper.takeScreenshot();
 
         Assert.assertEquals(shopPage.getProductName(), "KOSZULKA WEST HAM UNITED");
@@ -24,13 +23,11 @@ public class ShopTest extends Pages {
 
         scHelper.takeScreenshot();
 
-        //waita trzeba zrobic
-
         Assert.assertEquals(cartPage.getCartTitle(), "Koszyk – Selenium Shop Automatyzacja Testów");
         Assert.assertTrue(cartPage.freeDeliveryIsSelected());
         cartPage.goToCheckout();
-
-        Assert.assertEquals(checkoutPage.getPaymentTitle(), "Zamówienie – Selenium Shop Automatyzacja Testów");
+        System.out.println(checkoutPage.getCheckoutTitle());
+        Assert.assertEquals(checkoutPage.getCheckoutTitle(), "Zamówienie – Selenium Shop Automatyzacja Testów");
 
         scHelper.takeScreenshot();
 
@@ -40,7 +37,7 @@ public class ShopTest extends Pages {
         Assert.assertEquals(checkoutPage.getTotalPrice(), "90,00");
 
 
-
-
     }
+
+
 }

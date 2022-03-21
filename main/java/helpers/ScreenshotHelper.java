@@ -19,7 +19,7 @@ public class ScreenshotHelper extends BasePage {
         try {
             File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
-            FileUtils.copyFile(scrFile, new File("src/main/resources/screenshot_" + System.nanoTime() + ".png"));
+            FileUtils.copyFile(scrFile, new File("src/main/resources/screenshot_" + System.currentTimeMillis() + ".png"));
         } catch (IOException e) {
             System.err.println("It is not possible to take a screenshot");
         }

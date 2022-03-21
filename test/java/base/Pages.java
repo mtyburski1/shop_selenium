@@ -8,11 +8,11 @@ import pages.MainPage;
 import pages.ShopPage;
 
 public class Pages extends TestBase {
-    MainPage mainPage;
-    ShopPage shopPage;
-    ScreenshotHelper scHelper;
-    CartPage cartPage;
-    CheckoutPage checkoutPage;
+    protected MainPage mainPage;
+    protected ShopPage shopPage;
+    protected ScreenshotHelper scHelper;
+    protected CartPage cartPage;
+    protected CheckoutPage checkoutPage;
 
     @BeforeMethod
     public void setUpObjects() {

@@ -11,9 +11,6 @@ public class CheckoutPage extends BasePage {
         super(driver);
     }
 
-    @FindBy(css = "title")
-    private WebElement paymentTitle;
-
     @FindBy(css = ".cart_item .product-name")
     private WebElement itemName;
 
@@ -26,23 +23,23 @@ public class CheckoutPage extends BasePage {
     @FindBy(xpath = "//*[@id=\"order_review\"]/table/tfoot/tr[1]/td/span")
     private WebElement totalPrice;
 
-    public String getTotalPrice(){
+    public String getTotalPrice() {
         return totalPrice.getText().substring(0, 5);
     }
 
-    public Boolean isFreeShippingSelected(){
+    public Boolean isFreeShippingSelected() {
         return freeShippingRadio.isSelected();
     }
 
-    public String getProductPrice(){
+    public String getProductPrice() {
         return productPrice.get(0).getText().substring(0, 5);
     }
 
-    public String getItemName(){
-        return itemName.getText().substring(0, 23);
+    public String getItemName() {
+        return itemName.getText().substring(0, 24);
     }
 
-    public String getPaymentTitle(){
-        return paymentTitle.getText();
+    public String getCheckoutTitle() {
+        return driver.getTitle();
     }
 }

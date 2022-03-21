@@ -7,12 +7,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
-public class ShopPage extends  BasePage{
-    public ShopPage(WebDriver driver){
+public class ShopPage extends BasePage {
+    public ShopPage(WebDriver driver) {
         super(driver);
     }
 
-    @FindBy (css = ".product")
+    @FindBy(css = ".product")
     private List<WebElement> productsList;
 
     @FindBy(css = ".product_title")
@@ -33,34 +33,34 @@ public class ShopPage extends  BasePage{
     @FindBy(css = ".button.wc-forward")
     private WebElement checkCartBtn;
 
-    public CartPage checkCartClick(){
+    public CartPage checkCartClick() {
         click(checkCartBtn);
         return new CartPage(driver);
     }
 
-    public String getAddedProductMessage(){
+    public String getAddedProductMessage() {
         wait.until(ExpectedConditions.elementToBeClickable(addedProductText));
         return addedProductText.getText().substring(14);
     }
 
-    public ShopPage addToCart(){
+    public ShopPage addToCart() {
         click(addToCartBtn);
         return this;
     }
 
-    public int getQuantity(){
+    public int getQuantity() {
         return Integer.parseInt(quantity.getAttribute("value"));
     }
 
-    public String getPrice(){
-       return priceText.getText().substring(0, 5);
+    public String getPrice() {
+        return priceText.getText().substring(0, 5);
     }
 
-    public String getProductName(){
+    public String getProductName() {
         return wait.until(ExpectedConditions.elementToBeClickable(productNameText)).getText();
     }
 
-    public ShopPage ClickOnProduct(int value){
+    public ShopPage ClickOnProduct(int value) {
         click(productsList.get(value));
         return this;
     }
